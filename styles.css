@@ -1,0 +1,502 @@
+@font-face{font-family:Silkscreen-1b8007141fc3d54c;src:url("/_astro/fonts/d2bb351a8ffa0e2b.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:400;font-style:normal;}@font-face{font-family:Silkscreen-1b8007141fc3d54c;src:url("/_astro/fonts/c1b085bd072c1fe9.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:700;font-style:normal;}@font-face{font-family:"Silkscreen-1b8007141fc3d54c fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:normal;size-adjust:111.1486%;ascent-override:92.6688%;descent-override:22.4924%;}@font-face{font-family:"Silkscreen-1b8007141fc3d54c fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:normal;size-adjust:111.1486%;ascent-override:92.6688%;descent-override:22.4924%;}:root{--font-pixel:Silkscreen-1b8007141fc3d54c,"Silkscreen-1b8007141fc3d54c fallback: Courier New",ui-monospace,monospace;}
+@font-face{font-family:"Pixelify Sans-b19374e5f305706f";src:url("/_astro/fonts/11df45352198a258.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:400 700;font-style:normal;}@font-face{font-family:"Pixelify Sans-b19374e5f305706f fallback: Arial";src:local("Arial");font-display:swap;font-weight:400 700;font-style:normal;size-adjust:112.6064%;ascent-override:81.7005%;descent-override:24.8654%;line-gap-override:0%;}:root{--font-read:"Pixelify Sans-b19374e5f305706f","Pixelify Sans-b19374e5f305706f fallback: Arial",system-ui,sans-serif;}
+
+@font-face { font-family: Silkscreen-1b8007141fc3d54c; src: url("/_astro/fonts/d2bb351a8ffa0e2b.woff2") format("woff2"); font-display: swap; unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; font-weight: 400; font-style: normal; }
+@font-face { font-family: Silkscreen-1b8007141fc3d54c; src: url("/_astro/fonts/c1b085bd072c1fe9.woff2") format("woff2"); font-display: swap; unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; font-weight: 700; font-style: normal; }
+@font-face { font-family: "Silkscreen-1b8007141fc3d54c fallback: Courier New"; src: local("Courier New"); font-display: swap; font-weight: 400; font-style: normal; size-adjust: 111.149%; ascent-override: 92.6688%; descent-override: 22.4924%; }
+@font-face { font-family: "Silkscreen-1b8007141fc3d54c fallback: Courier New"; src: local("Courier New"); font-display: swap; font-weight: 700; font-style: normal; size-adjust: 111.149%; ascent-override: 92.6688%; descent-override: 22.4924%; }
+:root { --font-pixel: Silkscreen-1b8007141fc3d54c,"Silkscreen-1b8007141fc3d54c fallback: Courier New",ui-monospace,monospace; }
+@font-face { font-family: "Pixelify Sans-b19374e5f305706f"; src: url("/_astro/fonts/11df45352198a258.woff2") format("woff2"); font-display: swap; unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; font-weight: 400 700; font-style: normal; }
+@font-face { font-family: "Pixelify Sans-b19374e5f305706f fallback: Arial"; src: local("Arial"); font-display: swap; font-weight: 400 700; font-style: normal; size-adjust: 112.606%; ascent-override: 81.7005%; descent-override: 24.8654%; line-gap-override: 0%; }
+:root { --font-read: "Pixelify Sans-b19374e5f305706f","Pixelify Sans-b19374e5f305706f fallback: Arial",system-ui,sans-serif; }
+:root { --bg: #14110d; --bg-2: #1b1712; --stone: #26221b; --stone-2: #2f2a21; --stone-edge: #423a2c; --stone-edge-dark: #0d0b08; --outline: #0a0806; --bevel-hi: #ffffff1f; --bevel-lo: #00000073; --parchment: #e9dcc0; --parchment-ink: #2a2115; --plate: #efe6d4; --ink: #ede6d8; --ink-dim: #b3a892; --ink-faint: #8a8069; --cyan: #31d0d6; --cyan-glow: #31d0d688; --purple: #a074e0; --purple-glow: #a074e088; --gold: #e3b341; --green: #5fbf6a; --green-lip: #3f8a48; --danger: #e5713b; --xp-fill: #7ee05a; --xp-empty: #2a3a22; --book-leather: #8a3b22; --book-edge: #4a1e10; --book-hi: #b5623f; --book-page: #f7f1e1; --book-stitch: #c0281c; --mc-btn: #6f6f6f; --mc-btn-hi: #a8a8a8; --mc-btn-lo: #3a3a3a; --r-common: #e8eef2; --r-rare: #4c8dff; --r-unique: var(--gold); --r-special: #d95fa8; --g-damage: #e5523f; --g-control: #3fa7e8; --g-support: #6fcf7a; --g-defense: #2fd0b8; --g-mobility: #b6e34a; --g-utility: #b5835a; --g-standard: var(--purple); --g-powerful: #d95fa8; --g-system: #f08a4b; --font-display: var(--font-pixel), ui-monospace, monospace; --font-body: var(--font-read), system-ui, "Segoe UI", Roboto, sans-serif; --px: 2px; --shadow-hard: 4px 4px 0 var(--outline); --bevel: inset var(--px) var(--px) 0 var(--bevel-hi), inset calc(var(--px) * -1) calc(var(--px) * -1) 0 var(--bevel-lo); --ease: cubic-bezier(.2, .8, .2, 1); --dur-fast: .12s; --dur: .2s; --dur-slow: .48s; --dur-reveal: .64s; --ease-out-back: cubic-bezier(.34, 1.56, .64, 1); --green-glow: #5fbf6a77; --gold-glow: #e3b34177; --torch: #ffb347; --glow-cyan: 0 0 0 2px #31d0d655, 0 0 18px #31d0d666; --glow-gold: 0 0 0 2px #e3b34155, 0 0 22px #e3b34166; --glow-purple: 0 0 0 2px #a074e055, 0 0 22px #a074e077; --glow-green: 0 0 0 2px #5fbf6a44, 0 0 20px #5fbf6a66; --wrap: 1200px; --gap: clamp(1rem, 2.5vw, 1.5rem); --header-h: 64px; --hotbar-h: 72px; color-scheme: dark; }
+*, ::before, ::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); }
+body { background-color: var(--bg); color: var(--ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; margin: 0px; font-size: 1rem; line-height: 1.6; }
+body:has(#hotbar) { padding-bottom: calc(var(--hotbar-h) + 16px); }
+h1, h2, h3 { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.02em; margin: 0px 0px 0.4em; font-weight: 700; line-height: 1.1; }
+p { max-width: 66ch; margin: 0px 0px 1rem; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-underline-offset: 3px; text-decoration: underline; }
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+[hidden] { display: none !important; }
+.tnum { font-variant-numeric: tabular-nums; }
+.pixelated { image-rendering: pixelated; }
+.sr-only { clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px; width: 1px; height: 1px; margin: -1px; padding: 0px; position: absolute; overflow: hidden; }
+.wrap { width: min(100% - 2rem, var(--wrap)); margin-inline: auto; }
+.section { padding-block: clamp(3rem, 7vw, 5rem) 0px; }
+.px-frame { background: var(--stone); box-shadow: var(--bevel), 0 0 0 var(--px) var(--outline), 6px 6px 0 var(--outline); }
+.section-title { margin: 0px 0px clamp(1.5rem, 4vw, 2rem); display: flex; }
+.section-title > h2 { letter-spacing: 0.08em; background: var(--stone-2); color: var(--ink); box-shadow: var(--bevel), 0 4px 0 var(--outline); align-items: center; gap: 0.6rem; margin: 0px; padding: 0.55rem 1rem; font-size: 1.05rem; display: inline-flex; }
+.section-title > h2::before { content: ""; background: var(--accent,var(--green)); flex: 0 0 auto; width: 12px; height: 12px; }
+@media (width >= 768px) {
+  .section-title { justify-content: center; }
+  .section-title > h2 { background: var(--plate); color: var(--bg); border: 4px solid var(--outline); box-shadow: var(--shadow-hard); padding: 0.6rem 2rem; font-size: 1.5rem; }
+  .section-title > h2::before { display: none; }
+}
+.pixel-lede { font-family: var(--font-display); letter-spacing: 0.04em; text-transform: none; color: var(--ink); text-shadow: 2px 2px 0 var(--outline); font-size: clamp(0.78rem, 2.1vw, 0.95rem); font-weight: 400; line-height: 1.75; }
+.section-lede { font-family: var(--font-display); letter-spacing: 0.03em; text-shadow: 2px 2px 0 var(--outline); color: var(--ink-dim); margin: -0.75rem 0px 1.75rem; line-height: 1.75; }
+@media (width >= 768px) {
+  .section-lede { text-align: center; margin-inline: auto; }
+}
+.btn { min-height: 48px; font-family: var(--font-display); letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease); border: 0px; justify-content: center; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; font-size: 0.95rem; line-height: 1; text-decoration: none; display: inline-flex; }
+.btn:hover { text-decoration: none; transform: translateY(-2px); }
+.btn:active { transform: translateY(2px); }
+.btn--green { background: var(--green); color: rgb(12, 26, 14); box-shadow: inset var(--px) var(--px) 0 #ffffff59, inset 0 -4px 0 var(--green-lip), 0 0 0 var(--px) var(--outline), var(--shadow-hard); }
+.btn--dark { background: var(--stone); color: var(--ink); box-shadow: var(--bevel), 0 0 0 var(--px) var(--outline), var(--shadow-hard); }
+.btn--mc { background: var(--mc-btn); color: rgb(255, 255, 255); text-shadow: 2px 2px 0 var(--mc-btn-lo); box-shadow: inset var(--px) var(--px) 0 var(--mc-btn-hi), inset calc(var(--px) * -1) calc(var(--px) * -1) 0 var(--mc-btn-lo), 0 0 0 var(--px) var(--outline); }
+.btn--mc:hover { background: rgb(91, 99, 149); }
+.bracket { background: var(--stone); box-shadow: var(--bevel), 0 0 0 var(--px) var(--outline); --bk: var(--stone-edge); position: relative; }
+.bracket::before, .bracket::after { content: ""; pointer-events: none; border: 3px solid var(--bk); width: 16px; height: 16px; position: absolute; }
+.bracket::before { border-bottom: 0px; border-right: 0px; top: -6px; left: -6px; }
+.bracket::after { border-top: 0px; border-left: 0px; bottom: -6px; right: -6px; }
+.bracket--gold { --bk: var(--gold); }
+.rarity--common { color: var(--r-common); }
+.rarity--rare { color: var(--r-rare); }
+.rarity--unique { color: var(--r-unique); }
+.rarity--special { color: var(--r-special); }
+.grade--common { --grade: var(--r-common); }
+.grade--rare { --grade: var(--r-rare); }
+.grade--special { --grade: var(--r-special); }
+.grade--unique { --grade: var(--r-unique); }
+.grade--damage { --grade: var(--g-damage); }
+.grade--control { --grade: var(--g-control); }
+.grade--support { --grade: var(--g-support); }
+.grade--defense { --grade: var(--g-defense); }
+.grade--mobility { --grade: var(--g-mobility); }
+.grade--utility { --grade: var(--g-utility); }
+.grade--standard { --grade: var(--g-standard); }
+.grade--powerful { --grade: var(--g-powerful); }
+.grade--system { --grade: var(--g-system); }
+.skip { z-index: 100; background: var(--stone); color: var(--ink); padding: 0.6rem 1rem; position: absolute; top: 0px; left: -999px; }
+.skip:focus { left: 0px; }
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.22s; }
+@keyframes flicker { 
+  0%, 100% { opacity: 0.85; }
+  12% { opacity: 0.7; }
+  24% { opacity: 0.95; }
+  37% { opacity: 0.78; }
+  51% { opacity: 1; }
+  63% { opacity: 0.82; }
+  78% { opacity: 0.92; }
+  90% { opacity: 0.74; }
+}
+@keyframes pulse-glow { 
+  0%, 100% { filter: brightness(); }
+  50% { filter: brightness(1.12); }
+}
+@keyframes breathe { 
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+@keyframes float { 
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes pop-in { 
+  0% { opacity: 0; transform: scale(0.6); }
+  60% { opacity: 1; transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+@keyframes shimmer-sweep { 
+  0% { background-position: 150% 0px; }
+  30%, 100% { background-position: -50% 0px; }
+}
+@keyframes drift { 
+  0% { transform: scale(1.06) translate(0px, 0px); }
+  100% { transform: scale(1.12) translate(-1.5%, -1%); }
+}
+@keyframes tick { 
+  0% { opacity: 0; transform: translateY(-35%); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+.motion-on [data-reveal] { opacity: 0; transition-property: ; transition-duration: ; transition-timing-function: ; transition-behavior: ; transition-delay: calc(var(--i,0) * 70ms); transform: translateY(16px); }
+.motion-on [data-reveal].is-in { opacity: 1; transform: none; }
+.motion-on [data-reveal="pop"] { transition-timing-function: var(--ease-out-back); transform: scale(0.85); }
+.shimmer { display: inline-block; position: relative; }
+.shimmer::after { content: attr(data-shimmer) / ""; pointer-events: none; color: rgba(0, 0, 0, 0); text-shadow: none; filter: none; background: linear-gradient(105deg, rgba(0, 0, 0, 0) 40%, rgba(255, 250, 225, 0.85) 50%, rgba(0, 0, 0, 0) 60%) 150% 0px / 250% 100% no-repeat text; animation: shimmer-sweep 6s var(--ease) 1.2s infinite; position: absolute; inset: 0px; }
+.btn { transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur) var(--ease), filter var(--dur) var(--ease); }
+.btn--green:hover, .btn--green:focus-visible { box-shadow: inset var(--px) var(--px) 0 #ffffff59, inset 0 -4px 0 var(--green-lip), 0 0 0 var(--px) var(--outline), 6px 6px 0 var(--outline), var(--glow-green); }
+.btn--dark:hover, .btn--dark:focus-visible, .btn--mc:hover, .btn--mc:focus-visible { box-shadow: var(--bevel), 0 0 0 var(--px) var(--outline), 6px 6px 0 var(--outline), var(--glow-cyan); }
+.btn:active { box-shadow: var(--bevel), 0 0 0 var(--px) var(--outline), 1px 1px 0 var(--outline); transform: translate(2px, 2px); }
+.motion-on .btn--pulse { animation: 2.4s ease-in-out 0s infinite normal none running pulse-glow; }
+.btn--pulse:hover { animation: auto ease 0s 1 normal none running none; }
+:root { --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' shape-rendering='crispEdges'%3E%3Cg fill='%23fff' fill-opacity='.035'%3E%3Crect x='4' y='6' width='4' height='4'/%3E%3Crect x='22' y='2' width='2' height='2'/%3E%3Crect x='40' y='12' width='4' height='2'/%3E%3Crect x='56' y='30' width='2' height='4'/%3E%3Crect x='14' y='28' width='2' height='2'/%3E%3Crect x='30' y='44' width='4' height='4'/%3E%3Crect x='50' y='52' width='2' height='2'/%3E%3Crect x='8' y='52' width='4' height='2'/%3E%3C/g%3E%3Cg fill='%23000' fill-opacity='.14'%3E%3Crect x='12' y='14' width='2' height='2'/%3E%3Crect x='34' y='24' width='4' height='2'/%3E%3Crect x='46' y='38' width='2' height='2'/%3E%3Crect x='2' y='38' width='2' height='4'/%3E%3Crect x='24' y='58' width='4' height='2'/%3E%3Crect x='58' y='4' width='2' height='2'/%3E%3C/g%3E%3C/svg%3E"); --notch: linear-gradient(var(--outline), var(--outline)); --planks: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='32' shape-rendering='crispEdges'%3E%3Cg fill='%23fff' fill-opacity='.07'%3E%3Crect width='64' height='1'/%3E%3Crect y='16' width='64' height='1'/%3E%3C/g%3E%3Cg fill='%23000' fill-opacity='.55'%3E%3Crect y='15' width='64' height='1'/%3E%3Crect y='31' width='64' height='1'/%3E%3Crect x='20' width='1' height='15'/%3E%3Crect x='52' width='1' height='15'/%3E%3Crect x='4' y='16' width='1' height='15'/%3E%3Crect x='36' y='16' width='1' height='15'/%3E%3C/g%3E%3Cg fill='%23000' fill-opacity='.22'%3E%3Crect x='6' y='5' width='6' height='1'/%3E%3Crect x='28' y='9' width='8' height='1'/%3E%3Crect x='42' y='4' width='5' height='1'/%3E%3Crect x='57' y='11' width='4' height='1'/%3E%3Crect x='12' y='21' width='7' height='1'/%3E%3Crect x='24' y='26' width='5' height='1'/%3E%3Crect x='44' y='22' width='8' height='1'/%3E%3Crect x='55' y='27' width='6' height='1'/%3E%3C/g%3E%3Cg fill='%23fff' fill-opacity='.09'%3E%3Crect x='21' y='3' width='1' height='1'/%3E%3Crect x='51' y='3' width='1' height='1'/%3E%3Crect x='5' y='19' width='1' height='1'/%3E%3Crect x='35' y='19' width='1' height='1'/%3E%3C/g%3E%3C/svg%3E"); }
+.card { --role: var(--cyan); --role-glow: var(--glow-cyan); --card-fill: var(--stone); --lip: 0 0 0 transparent; --lift: 0px; isolation: isolate; background-color: var(--card-fill); background-image: var(--notch), var(--notch), var(--notch), var(--notch), linear-gradient(105deg, transparent 42%, #ffffff12 50%, transparent 58%), var(--grain); box-shadow: var(--lip), var(--bevel), 0 0 0 var(--px) var(--outline), 4px 4px 0 var(--outline); transform: translateY(var(--lift)); transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), background-position var(--dur-slow) var(--ease); background-position: 0px 0px, 100% 0px, 0px 100%, 100% 100%, 150% 0px, 0px 0px; background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat; background-size: 4px 4px, 4px 4px, 4px 4px, 4px 4px, 250% 100%, 64px 64px; position: relative; }
+a.card:hover, a.card:focus-visible, .card:has(a:hover), .card:has(a:focus-visible) { --lift: -4px; box-shadow: var(--lip), var(--bevel), 0 0 0 var(--px) var(--outline), 8px 8px 0 var(--outline), var(--role-glow); background-position: 0px 0px, 100% 0px, 0px 100%, 100% 100%, -50% 0px, 0px 0px; }
+a.card:active, .card:has(a:active) { --lift: 0px; }
+.card-art { position: relative; overflow: hidden; }
+.card-art img { transition: transform var(--dur-slow) var(--ease); }
+a.card:hover .card-art img, .card:has(a:hover) .card-art img, a.card:focus-visible .card-art img, .card:has(a:focus-visible) .card-art img { transform: scale(1.04); }
+.chip { background: var(--bg); min-height: 22px; color: var(--ink-dim); box-shadow: inset 0 0 0 2px var(--stone-edge); font-family: var(--font-display); letter-spacing: 0.05em; text-transform: uppercase; align-items: center; padding: 0.15rem 0.45rem; font-size: 0.62rem; display: inline-flex; }
+.card--item { --card-fill: #17121c; --lip: inset 0 4px 0 var(--role); }
+.card--item.is-enchanted { --role: var(--purple); --role-glow: var(--glow-purple); box-shadow: var(--lip), var(--bevel), 0 0 0 var(--px) var(--outline), 4px 4px 0 var(--outline), 0 0 0 2px #a074e033, 0 0 16px #a074e044; }
+.motion-on .card--item.is-enchanted { animation: 3.2s ease-in-out 0s infinite normal none running pulse-glow; }
+.card--scene { --card-fill: var(--bg-2); }
+.card--scene .card-art::after { content: ""; pointer-events: none; background: linear-gradient(rgba(0, 0, 0, 0) 45%, rgba(10, 8, 6, 0.85) 100%); position: absolute; inset: 0px; }
+.plate { z-index: 1; background: var(--stone-2); color: var(--gold); font-family: var(--font-display); letter-spacing: 0.04em; box-shadow: var(--bevel), 0 0 0 var(--px) var(--outline), 3px 3px 0 var(--outline); padding: 0.45rem 0.8rem; display: inline-block; position: relative; }
+.card--chest.bracket::before, .card--chest.bracket::after { transition: transform var(--dur) var(--ease); }
+.card--chest.bracket:hover::before, .card--chest.bracket:focus-within::before { transform: translate(-3px, -3px); }
+.card--chest.bracket:hover::after, .card--chest.bracket:focus-within::after { transform: translate(3px, 3px); }
+.card--chest.bracket--gold:hover, .card--chest.bracket--gold:focus-within { box-shadow: var(--bevel), 0 0 0 var(--px) var(--outline), var(--shadow-hard), var(--glow-gold); }
+.card--chest.bracket--gold::before, .card--chest.bracket--gold::after { filter: drop-shadow(rgba(227, 179, 65, 0.667) 0px 0px 4px); }
+.motion-on .card--chest.bracket--gold::before, .motion-on .card--chest.bracket--gold::after { animation: 3s ease-in-out 0s infinite normal none running breathe; }
+.card--parchment { --card-fill: var(--parchment); color: var(--parchment-ink); background-image: var(--notch), var(--notch), var(--notch), var(--notch), radial-gradient(120% 90% at 50% 50%, transparent 62%, #78542838 100%), var(--grain); box-shadow: inset 0 0 0 2px #c7b288, 0 0 0 var(--px) var(--outline), 4px 4px 0 var(--outline); }
+.card--parchment::before { content: ""; background: var(--book-stitch); width: 10px; height: 10px; position: absolute; top: 10px; right: 10px; box-shadow: rgb(142, 29, 20) 2px 0px, rgb(142, 29, 20) 0px 2px, rgb(142, 29, 20) 2px 2px, rgb(217, 70, 58) -2px 0px; }
+.room { isolation: isolate; padding-bottom: clamp(3rem, 7vw, 5rem); position: relative; }
+.room::after { content: ""; z-index: -1; pointer-events: none; background: radial-gradient(60% 50% at 50% 55%, var(--room-light,transparent), transparent 70%); position: absolute; inset: 0px; }
+.room--torch { --room-light: #ffb34714; }
+.room--enchant { --room-light: #a074e01a; }
+.room--soul { --room-light: #31d0d612; }
+.room--treasure { --room-light: #e3b34114; }
+.motion-on .room--torch::after { animation: 5s steps(8) 0s infinite normal none running flicker; }
+.room--alt { background-color: var(--bg-2); background-image: var(--grain); background-size: 64px 64px; }
+.room--alt::before { content: ""; pointer-events: none; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='8' shape-rendering='crispEdges'%3E%3Cpath fill='%231b1712' d='M0 8V4h8V0h12v4h8v4zM28 8V2h10v2h10v4z'/%3E%3C/svg%3E") 0px 0px / 48px 8px repeat-x; height: 8px; position: absolute; top: -8px; left: 0px; right: 0px; }
+.section-title > h2 { transition: box-shadow var(--dur-slow) var(--ease); }
+@media (width >= 768px) {
+  .section-title > h2 { background-image: linear-gradient(var(--bg), var(--bg)), linear-gradient(var(--bg), var(--bg)), linear-gradient(var(--bg), var(--bg)), linear-gradient(var(--bg), var(--bg)); background-position: 0px 0px, 100% 0px, 0px 100%, 100% 100%; background-repeat: no-repeat; background-size: 4px 4px; }
+  .motion-on .section-title.is-in > h2 { box-shadow: var(--shadow-hard), 0 0 0 2px #e3b34133, 0 10px 26px -10px #e3b34166; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, ::before, ::after { transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
+}
+.glyph-field { z-index: -1; pointer-events: none; will-change: transform; contain: strict; width: 100%; height: 100%; position: fixed; inset: 0px; transform: translateZ(0px); }
+.card--scene .card-art, .card--article .card-art, .item-frame { border-width: 8px; border-style: solid; border-color: rgb(94, 61, 33); border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' shape-rendering='crispEdges'%3E%3Crect width='24' height='24' fill='%230a0806'/%3E%3Crect x='2' y='2' width='20' height='20' fill='%234f331c'/%3E%3Crect x='2' y='2' width='20' height='2' fill='%239c6b3f'/%3E%3Crect x='2' y='2' width='2' height='20' fill='%239c6b3f'/%3E%3Crect x='4' y='4' width='16' height='16' fill='%237a5230'/%3E%3Crect x='6' y='6' width='12' height='12' fill='%230a0806'/%3E%3Cg fill='%235e3d21'%3E%3Crect x='10' y='4' width='3' height='1'/%3E%3Crect x='4' y='11' width='1' height='3'/%3E%3Crect x='19' y='9' width='1' height='3'/%3E%3Crect x='12' y='19' width='3' height='1'/%3E%3C/g%3E%3Cg fill='%23b8bcc2'%3E%3Crect x='3' y='3' width='2' height='2'/%3E%3Crect x='19' y='3' width='2' height='2'/%3E%3Crect x='3' y='19' width='2' height='2'/%3E%3Crect x='19' y='19' width='2' height='2'/%3E%3C/g%3E%3C/svg%3E") 8 / 1 / 0 round; }
+.gicon { object-fit: contain; width: 100%; height: 100%; image-rendering: pixelated; background: color-mix(in srgb, var(--grade,var(--purple)) 14%, transparent); display: block; }
+.gtile { background: color-mix(in srgb, var(--grade,var(--purple)) 28%, var(--bg-2)); width: 100%; height: 100%; box-shadow: inset 2px 2px 0 #ffffff2e, inset -2px -2px 0 #00000059, inset 0 0 0 2px var(--grade,var(--purple)); font-family: var(--font-display); color: var(--grade,var(--purple)); text-shadow: 2px 2px 0 var(--outline); place-items: center; font-size: 1.1rem; display: grid; }
+.icon-credit { font-family: var(--font-body); color: var(--ink-faint); max-width: 70ch; margin: 1.25rem 0px 0px; font-size: 0.78rem; line-height: 1.5; }
+.site-header[data-astro-cid-hrxsezxw] { z-index: 50; height: var(--header-h); background-color: var(--stone); background-image: radial-gradient(260px 90px at 12% 50%, #ffb3471a, transparent 70%), var(--planks); border-bottom: 2px solid var(--outline); transition: background-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease); background-position: 0px 0px, 0px 0px; background-size: auto, 64px 32px; position: sticky; top: 0px; box-shadow: rgba(255, 255, 255, 0.06) 0px 2px inset, rgba(0, 0, 0, 0.35) 0px -2px inset; }
+.site-header[data-astro-cid-hrxsezxw].is-scrolled { background-color: var(--stone-2); box-shadow: inset 0 2px 0 #ffffff0f, inset 0 -2px 0 #00000059, 0 4px 0 var(--outline); }
+.bar[data-astro-cid-hrxsezxw] { justify-content: space-between; align-items: center; gap: 1rem; height: 100%; display: flex; }
+.brand[data-astro-cid-hrxsezxw] { min-width: 0px; color: var(--ink); flex: 1 1 auto; align-items: center; gap: 0.6rem; min-height: 48px; text-decoration: none; display: inline-flex; }
+.brand[data-astro-cid-hrxsezxw]:hover { text-decoration: none; }
+.brand-icon[data-astro-cid-hrxsezxw] { flex: 0 0 auto; width: 36px; height: 36px; }
+.wordmark[data-astro-cid-hrxsezxw] { text-overflow: ellipsis; max-width: 100%; font-family: var(--font-display); letter-spacing: 0.03em; color: var(--ink); text-shadow: 2px 2px 0 var(--outline); white-space: nowrap; font-size: clamp(0.75rem, 3vw, 1.15rem); display: inline-block; overflow: hidden; }
+.accent-green[data-astro-cid-hrxsezxw] { color: var(--green); }
+.site-nav[data-astro-cid-hrxsezxw] { flex: 0 0 auto; align-items: center; gap: 2px; display: flex; }
+.nav-tab[data-astro-cid-hrxsezxw] { background: var(--stone-2); min-height: 44px; color: var(--ink-dim); font-family: var(--font-display); letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; box-shadow: var(--bevel), 0 0 0 var(--px) var(--outline); justify-content: center; align-items: center; padding: 0px 0.55rem; font-size: 0.64rem; text-decoration: none; display: inline-flex; position: relative; }
+.nav-tab[data-astro-cid-hrxsezxw]:hover, .nav-tab[data-astro-cid-hrxsezxw]:focus-visible { color: var(--cyan); text-decoration: none; }
+.nav-tab[data-astro-cid-hrxsezxw][aria-current="page"] { color: var(--ink); }
+.nav-tab[data-astro-cid-hrxsezxw][aria-current="page"]::after { content: ""; background: var(--cyan); height: 2px; position: absolute; bottom: 0px; left: 0px; right: 0px; }
+@media (width <= 599px) {
+  .nav-home[data-astro-cid-hrxsezxw] { display: none; }
+  .nav-tab[data-astro-cid-hrxsezxw] { min-height: 44px; padding: 0px 0.45rem; font-size: 0.6rem; }
+}
+.xp[data-astro-cid-hrxsezxw] { pointer-events: none; z-index: 2; width: min(440px, 58vw); height: 12px; position: absolute; bottom: -7px; left: 50%; transform: translate(-50%); }
+.xp-level[data-astro-cid-hrxsezxw] { font-family: var(--font-display); color: var(--xp-fill); text-shadow: 2px 0 0 var(--outline), -2px 0 0 var(--outline), 0 2px 0 var(--outline), 0 -2px 0 var(--outline), 2px 2px 0 var(--outline); font-size: 0.95rem; line-height: 1; position: absolute; bottom: 15px; left: 50%; transform: translate(-50%); }
+.xp-level[data-astro-cid-hrxsezxw].lvl-up { animation: xp-pop .42s var(--ease-out-back); }
+@keyframes xp-pop { 
+  0% { transform: translate(-50%) scale(1); }
+  40% { text-shadow: 2px 0 0 var(--outline), -2px 0 0 var(--outline), 0 2px 0 var(--outline), 0 -2px 0 var(--outline), 0 0 12px #7ee05a; transform: translate(-50%) scale(1.45); }
+  100% { transform: translate(-50%) scale(1); }
+}
+.xp-track[data-astro-cid-hrxsezxw] { background: linear-gradient(180deg, #1c2817 0 3px, var(--xp-empty) 3px); width: 100%; height: 100%; box-shadow: 0 0 0 2px var(--outline), 3px 3px 0 2px var(--outline); position: relative; overflow: hidden; }
+.xp-fill[data-astro-cid-hrxsezxw] { background: linear-gradient(180deg, #c3f59a 0 2px, var(--xp-fill) 2px 8px, #4fa83a 8px); transform: scaleX(var(--xp,0)); transform-origin: 0px center; position: absolute; inset: 0px; }
+.xp-segments[data-astro-cid-hrxsezxw] { background-image: repeating-linear-gradient(to right, transparent 0, transparent calc(100% / 18 - 2px), var(--outline) calc(100% / 18 - 2px), var(--outline) calc(100% / 18)); position: absolute; inset: 0px; }
+.xp-orb[data-astro-cid-hrxsezxw] { top: 50%; left: calc(var(--xp,0) * 100%); width: 6px; height: 6px; opacity: calc(min(var(--xp,0) * 40, 1)); background: rgb(234, 255, 214); margin: -3px 0px 0px -3px; position: absolute; box-shadow: rgb(126, 224, 90) 0px 0px 0px 2px, rgba(126, 224, 90, 0.667) 0px 0px 10px 3px; }
+@media (width <= 767px) {
+  .xp[data-astro-cid-hrxsezxw] { width: min(260px, 64vw); height: 8px; bottom: -5px; }
+  .xp-level[data-astro-cid-hrxsezxw] { font-size: 0.7rem; bottom: 11px; }
+}
+.site-footer[data-astro-cid-ghzixdhz] { isolation: isolate; background-color: var(--stone); background-image: radial-gradient(420px 140px at 50% 0%, #ffb3471a, transparent 70%), var(--planks); border-top: 2px solid var(--outline); background-size: auto, 64px 32px; position: relative; box-shadow: rgba(255, 255, 255, 0.06) 0px 2px inset, rgba(0, 0, 0, 0.35) 0px -2px inset; }
+.site-footer[data-astro-cid-ghzixdhz]::before { content: ""; pointer-events: none; background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 179, 71, 0.6), rgba(0, 0, 0, 0)); height: 3px; position: absolute; top: -2px; left: 0px; right: 0px; }
+.motion-on .site-footer[data-astro-cid-ghzixdhz]::before { animation: 5s steps(8) 0s infinite normal none running flicker; }
+.inner[data-astro-cid-ghzixdhz] { text-align: center; flex-direction: column; align-items: center; gap: 1.5rem; padding-block: clamp(2rem, 5vw, 3rem); display: flex; }
+.brand-col[data-astro-cid-ghzixdhz] { flex-direction: column; align-items: center; gap: 0.5rem; display: flex; }
+.wordmark-link[data-astro-cid-ghzixdhz] { align-items: center; min-height: 44px; text-decoration: none; display: inline-flex; }
+.wordmark-link[data-astro-cid-ghzixdhz]:hover { text-decoration: none; }
+.wordmark[data-astro-cid-ghzixdhz] { font-family: var(--font-display); letter-spacing: 0.03em; color: var(--ink); font-size: 0.95rem; }
+.accent-green[data-astro-cid-ghzixdhz] { color: var(--green); }
+.disclaimer[data-astro-cid-ghzixdhz] { max-width: 42ch; font-family: var(--font-display); letter-spacing: 0.03em; color: var(--ink-dim); margin: 0px; font-size: 0.6rem; line-height: 1.7; }
+.copyright[data-astro-cid-ghzixdhz] { font-family: var(--font-display); letter-spacing: 0.03em; color: var(--ink-dim); margin: 0px; font-size: 0.8rem; }
+.links-col[data-astro-cid-ghzixdhz] { flex-direction: column; align-items: center; gap: 1rem; display: flex; }
+.legal-links[data-astro-cid-ghzixdhz] { font-family: var(--font-display); letter-spacing: 0.03em; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0px 0.6rem; font-size: 0.75rem; display: flex; }
+.legal-links[data-astro-cid-ghzixdhz] a[data-astro-cid-ghzixdhz] { min-height: 44px; color: var(--ink-dim); transition: color var(--dur) var(--ease), text-shadow var(--dur) var(--ease); align-items: center; display: inline-flex; }
+.legal-links[data-astro-cid-ghzixdhz] a[data-astro-cid-ghzixdhz]:hover, .legal-links[data-astro-cid-ghzixdhz] a[data-astro-cid-ghzixdhz]:focus-visible { color: var(--cyan); text-shadow: rgba(49, 208, 214, 0.533) 0px 0px 8px; }
+.legal-links[data-astro-cid-ghzixdhz] span[data-astro-cid-ghzixdhz] { color: var(--ink-faint); }
+.wordmark-link[data-astro-cid-ghzixdhz]:hover .wordmark[data-astro-cid-ghzixdhz], .wordmark-link[data-astro-cid-ghzixdhz]:focus-visible .wordmark[data-astro-cid-ghzixdhz] { text-shadow: rgba(49, 208, 214, 0.533) 0px 0px 8px; }
+@media (width >= 768px) {
+  .inner[data-astro-cid-ghzixdhz] { text-align: left; flex-direction: row; justify-content: space-between; align-items: center; }
+  .brand-col[data-astro-cid-ghzixdhz] { align-items: flex-start; }
+  .links-col[data-astro-cid-ghzixdhz] { flex-direction: row; gap: 1.5rem; }
+}
+.hero[data-astro-cid-qmrutqly] { background: var(--bg); align-items: flex-end; height: min(78vh, 720px); display: flex; position: relative; overflow: hidden; }
+@media (width <= 767px) {
+  .hero[data-astro-cid-qmrutqly] { height: 88svh; }
+}
+.hero-art[data-astro-cid-qmrutqly] { position: absolute; inset: 0px; }
+.layer[data-astro-cid-qmrutqly] { will-change: transform; position: absolute; }
+.layer[data-astro-cid-qmrutqly] picture, .layer[data-astro-cid-qmrutqly] img[data-astro-cid-qmrutqly] { width: 100%; height: 100%; display: block; }
+.layer[data-astro-cid-qmrutqly] img[data-astro-cid-qmrutqly] { object-fit: cover; object-position: center center; }
+.layer--sky[data-astro-cid-qmrutqly] { inset: -4%; }
+.layer--island[data-astro-cid-qmrutqly] { inset: -3%; }
+.layer--island[data-astro-cid-qmrutqly] img[data-astro-cid-qmrutqly] { object-fit: contain; object-position: center 60%; }
+.layer--fore[data-astro-cid-qmrutqly] { opacity: 0.9; inset: -10%; }
+.motion-on .layer--sky[data-astro-cid-qmrutqly] img[data-astro-cid-qmrutqly] { animation: 30s ease-in-out 0s infinite alternate none running drift; }
+.island-shift[data-astro-cid-qmrutqly] { --fire-x: 50%; --fire-y: 53%; width: 100%; height: 100%; position: relative; transform: translateY(-4%) scale(0.8); }
+@media (width >= 1024px) {
+  .island-shift[data-astro-cid-qmrutqly] { transform: translate(20%, 2%) scale(0.66); }
+}
+@media (width <= 767px) {
+  .island-shift[data-astro-cid-qmrutqly] { --fire-y: 49%; }
+}
+.campfire-light[data-astro-cid-qmrutqly] { left: calc(var(--fire-x) - min(18vw, 220px)); top: calc(var(--fire-y) - min(18vw, 220px)); mix-blend-mode: screen; pointer-events: none; background: radial-gradient(circle, rgba(255, 179, 71, 0.34) 0%, rgba(255, 179, 71, 0.12) 42%, rgba(0, 0, 0, 0) 70%); width: min(36vw, 440px); height: min(36vw, 440px); position: absolute; }
+.motion-on .campfire-light[data-astro-cid-qmrutqly] { animation: 5s steps(8) 0s infinite normal none running flicker; }
+.hero-embers[data-astro-cid-qmrutqly] { pointer-events: none; width: 100%; height: 100%; position: absolute; inset: 0px; }
+.scrim[data-astro-cid-qmrutqly] { background: linear-gradient(0deg, var(--bg) 0%, #14110d8c 32%, transparent 62%), linear-gradient(100deg, #14110deb 0%, #14110d8c 38%, transparent 68%); position: absolute; inset: 0px; }
+.content[data-astro-cid-qmrutqly] { z-index: 1; flex-direction: column; align-items: flex-start; gap: 0.6rem; padding-block: 0px clamp(1.75rem, 5vw, 3.5rem); display: flex; position: relative; }
+.eyebrow[data-astro-cid-qmrutqly] { font-family: var(--font-display); letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); text-shadow: 1px 1px 0 var(--outline); margin: 0px; font-size: 0.75rem; }
+#hero-title[data-astro-cid-qmrutqly] { font-family: var(--font-display); color: var(--gold); white-space: nowrap; margin: 0px; font-size: clamp(1.25rem, 6.2vw, 4.5rem); line-height: 1; }
+#hero-title[data-astro-cid-qmrutqly] .brand[data-astro-cid-qmrutqly] { text-shadow: 2px 0 0 var(--outline), -2px 0 0 var(--outline), 0 2px 0 var(--outline), 0 -2px 0 var(--outline), 3px 3px 0 var(--outline); filter: drop-shadow(rgba(0, 0, 0, 0.55) 0px 6px 10px); }
+.motion-on #hero-title[data-astro-cid-qmrutqly] .brand[data-astro-cid-qmrutqly] { animation: pop-in var(--dur-slow) var(--ease-out-back) both; }
+.sub[data-astro-cid-qmrutqly] { white-space: normal; margin: 0.75rem 0px 0px; display: block; }
+.sub[data-astro-cid-qmrutqly] time[data-astro-cid-qmrutqly] { color: inherit; }
+.live[data-astro-cid-qmrutqly] { background: var(--bg-2); box-shadow: inset 2px 2px 0 var(--outline), inset -2px -2px 0 var(--bevel-hi), inset 0 0 12px #31d0d655; font-family: var(--font-display); color: var(--cyan); text-shadow: 1px 1px 0 var(--outline); align-items: center; gap: 0.6rem; margin-block: 0.5rem 0.25rem; padding: 0.6rem 0.9rem; font-size: clamp(0.7rem, 2.2vw, 0.85rem); display: inline-flex; }
+.live-dot[data-astro-cid-qmrutqly] { background: var(--cyan); width: 10px; height: 10px; box-shadow: 0 0 8px var(--cyan); flex: 0 0 auto; }
+.motion-on .live-dot[data-astro-cid-qmrutqly] { animation: 1.6s steps(2) 0s infinite normal none running live-pulse; }
+@keyframes live-pulse { 
+  50% { opacity: 0.35; }
+}
+.actions[data-astro-cid-qmrutqly] { flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; display: flex; }
+@media (width <= 767px) {
+  .actions[data-astro-cid-qmrutqly] { flex-direction: column; align-items: stretch; width: 100%; }
+  .actions[data-astro-cid-qmrutqly] .btn[data-astro-cid-qmrutqly] { width: 100%; }
+}
+.platform-strip[data-astro-cid-wrib3ydp] { background: var(--stone-2); border-block: 2px solid var(--outline); }
+.inner[data-astro-cid-wrib3ydp] { flex-direction: column; align-items: center; gap: 0.75rem; padding-block: 0.9rem; display: flex; }
+.label[data-astro-cid-wrib3ydp] { font-family: var(--font-display); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); font-size: 0.7rem; }
+.chips[data-astro-cid-wrib3ydp] { flex-wrap: wrap; justify-content: center; gap: 0.75rem 1.5rem; margin: 0px; padding: 0px; list-style: none; display: flex; }
+.chip[data-astro-cid-wrib3ydp] { font-family: var(--font-display); letter-spacing: 0.02em; color: var(--ink); transition: color var(--dur) var(--ease), text-shadow var(--dur) var(--ease); align-items: center; gap: 0.5rem; padding: 0.2rem 0.3rem; font-size: 0.7rem; display: inline-flex; }
+.chip[data-astro-cid-wrib3ydp] svg[data-astro-cid-wrib3ydp] { flex: 0 0 auto; }
+.chip[data-astro-cid-wrib3ydp]:hover, .chip[data-astro-cid-wrib3ydp]:focus-within { color: var(--cyan); text-shadow: rgba(49, 208, 214, 0.4) 0px 0px 8px; }
+@media (width >= 768px) {
+  .inner[data-astro-cid-wrib3ydp] { flex-direction: row; justify-content: space-between; align-items: center; }
+  .chips[data-astro-cid-wrib3ydp] { justify-content: flex-end; gap: 1.75rem; }
+}
+.game-grid[data-astro-cid-vr3jmulo] { gap: var(--gap); grid-template-columns: 1fr; display: grid; }
+.game-book-col[data-astro-cid-vr3jmulo] { flex-direction: column; min-width: 0px; display: flex; }
+.book[data-astro-cid-vr3jmulo] { background: var(--book-leather); border: 2px solid var(--outline); box-shadow: inset var(--px) var(--px) 0 var(--book-hi), inset calc(var(--px) * -1) calc(var(--px) * -1) 0 var(--book-edge), var(--shadow-hard); flex-direction: column; flex: 1 1 auto; padding: 10px; display: flex; }
+.book-page[data-astro-cid-vr3jmulo] { background: var(--book-page); color: var(--parchment-ink); flex: 1 1 0%; display: flex; position: relative; box-shadow: rgba(42, 33, 21, 0.18) -6px 0px 12px inset; }
+.book-page-inner[data-astro-cid-vr3jmulo] { transform-origin: 0px center; flex-direction: column; flex: 1 1 0%; padding: 1.5rem 1.25rem 1.25rem 2.25rem; display: flex; position: relative; }
+.motion-on .book-page-inner[data-astro-cid-vr3jmulo].page-flip { animation: book-page-flip .26s var(--ease); }
+@keyframes book-page-flip { 
+  0% { opacity: 0; transform: perspective(900px) rotateY(-70deg); }
+  100% { opacity: 1; transform: perspective(900px) rotateY(0deg); }
+}
+.book-page-inner[data-astro-cid-vr3jmulo]::before { content: ""; background-image: repeating-linear-gradient(to bottom, var(--book-stitch) 0 8px, transparent 8px 18px); opacity: 0.6; pointer-events: none; width: 6px; position: absolute; top: 20px; bottom: 20px; left: 12px; }
+.book-page-head[data-astro-cid-vr3jmulo] { justify-content: space-between; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; display: flex; }
+.book-page-head[data-astro-cid-vr3jmulo] h3[data-astro-cid-vr3jmulo] { font-family: var(--font-display); color: var(--parchment-ink); outline: none; margin: 0px; font-size: 1rem; font-weight: 700; }
+.book-page-count[data-astro-cid-vr3jmulo] { font-family: var(--font-display); color: rgb(110, 101, 86); white-space: nowrap; flex: 0 0 auto; margin: 0px; font-size: 0.7rem; }
+.book-body[data-astro-cid-vr3jmulo] { font-family: var(--font-display); color: var(--parchment-ink); max-width: none; margin: 0px 0px 1rem; font-size: 0.85rem; font-style: normal; line-height: 1.75; }
+.book-attribution[data-astro-cid-vr3jmulo] { font-family: var(--font-display); color: rgb(110, 101, 86); margin: 0px 0px 1rem; font-size: 0.7rem; }
+.book-page-foot[data-astro-cid-vr3jmulo] { justify-content: flex-end; margin-top: auto; display: flex; }
+.book-page-foot--start[data-astro-cid-vr3jmulo] { justify-content: flex-start; }
+.book-arrow[data-astro-cid-vr3jmulo] { color: rgb(138, 59, 34); cursor: pointer; background: 0px 0px; border: 0px; justify-content: center; align-items: center; min-width: 48px; min-height: 48px; padding: 0px; display: inline-flex; }
+.book-arrow[data-astro-cid-vr3jmulo] svg { width: 22px; height: 22px; }
+.book-arrow[data-astro-cid-vr3jmulo]:hover { color: rgb(110, 101, 86); }
+.book-platform-list[data-astro-cid-vr3jmulo] { font-family: var(--font-display); flex-direction: column; gap: 0.4rem; margin: 0px 0px 1rem; padding: 0px; font-size: 0.85rem; list-style: none; display: flex; }
+.book-platform-list[data-astro-cid-vr3jmulo] li[data-astro-cid-vr3jmulo] { padding-left: 1rem; position: relative; }
+.book-platform-list[data-astro-cid-vr3jmulo] li[data-astro-cid-vr3jmulo]::before { content: ""; background: rgb(138, 59, 34); width: 6px; height: 6px; position: absolute; top: 0.45em; left: 0px; }
+.book-edition-list[data-astro-cid-vr3jmulo] { flex-direction: column; gap: 0.6rem; margin: 0px; display: flex; }
+.book-edition-row[data-astro-cid-vr3jmulo] dt[data-astro-cid-vr3jmulo] { font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; }
+.book-edition-row[data-astro-cid-vr3jmulo] dd[data-astro-cid-vr3jmulo] { font-family: var(--font-display); color: rgb(110, 101, 86); margin: 0.15rem 0px 0px; font-size: 0.75rem; }
+.game-buttons[data-astro-cid-vr3jmulo] { gap: 10px; margin-top: 1rem; display: flex; }
+.game-buttons[data-astro-cid-vr3jmulo] .btn[data-astro-cid-vr3jmulo] { flex: 1 1 50%; }
+.game-specs[data-astro-cid-vr3jmulo] { flex-direction: column; padding: 1.25rem clamp(1rem, 3vw, 1.75rem); display: flex; }
+.game-specs-source[data-astro-cid-vr3jmulo] { min-height: 48px; font-family: var(--font-display); letter-spacing: 0.06em; text-transform: uppercase; color: var(--cyan); align-items: center; margin-top: auto; padding-top: 0.75rem; font-size: 0.75rem; display: inline-flex; }
+.game-specs-title[data-astro-cid-vr3jmulo] { border-bottom: 2px solid var(--outline); color: var(--gold); margin: 0px 0px 1rem; padding-bottom: 0.6rem; font-size: 1rem; }
+.spec-list[data-astro-cid-vr3jmulo] { flex-direction: column; margin: 0px; display: flex; }
+.spec-row[data-astro-cid-vr3jmulo] { flex-direction: column; gap: 0.3rem; padding-block: 0.75rem; display: flex; }
+.spec-row[data-astro-cid-vr3jmulo] + .spec-row[data-astro-cid-vr3jmulo] { border-top: 1px solid var(--stone-edge); }
+.spec-row[data-astro-cid-vr3jmulo] dt[data-astro-cid-vr3jmulo] { font-family: var(--font-display); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-dim); align-items: center; gap: 0.5rem; margin: 0px; font-size: 0.7rem; display: flex; }
+.spec-row[data-astro-cid-vr3jmulo] dt[data-astro-cid-vr3jmulo] svg { flex: 0 0 auto; width: 16px; height: 16px; }
+.spec-row[data-astro-cid-vr3jmulo] dd[data-astro-cid-vr3jmulo] { font-family: var(--font-display); letter-spacing: 0.03em; color: var(--ink); margin: 0px; font-weight: 600; }
+.spec-row[data-astro-cid-vr3jmulo] dd[data-astro-cid-vr3jmulo].is-gold { color: var(--gold); }
+@media (width >= 768px) {
+  .spec-row[data-astro-cid-vr3jmulo] { flex-direction: row; justify-content: space-between; align-items: center; gap: 1rem; }
+  .spec-row[data-astro-cid-vr3jmulo] dd[data-astro-cid-vr3jmulo] { text-align: right; }
+}
+@media (width >= 1024px) {
+  .game-grid[data-astro-cid-vr3jmulo] { grid-template-columns: repeat(12, 1fr); align-items: stretch; }
+  .game-book-col[data-astro-cid-vr3jmulo] { grid-column: span 7; }
+  .game-specs[data-astro-cid-vr3jmulo] { grid-column: span 5; }
+  .book-body[data-astro-cid-vr3jmulo] { font-size: 0.95rem; }
+}
+.new-grid[data-astro-cid-ithsjftw] { grid-template-columns: 1fr; gap: 0.75rem; display: grid; }
+.item[data-astro-cid-ithsjftw] { padding: 0px; }
+.item-summary[data-astro-cid-ithsjftw] { cursor: pointer; align-items: center; gap: 0.75rem; min-height: 48px; padding: 0.75rem 1rem; list-style: none; display: flex; }
+.item-summary[data-astro-cid-ithsjftw]::-webkit-details-marker { display: none; }
+.item-slot[data-astro-cid-ithsjftw] { background: var(--stone-2); width: 40px; height: 40px; box-shadow: inset 2px 2px 0 #00000080, inset -1px -1px 0 #ffffff0f, 0 0 0 var(--px) var(--outline); flex: 0 0 auto; justify-content: center; align-items: center; display: flex; }
+.item--talisman[data-astro-cid-ithsjftw] .item-slot[data-astro-cid-ithsjftw] { box-shadow: inset 2px 2px 0 #00000080, inset -1px -1px 0 #ffffff0f, 0 0 0 var(--px) var(--outline), 0 0 10px var(--purple-glow); }
+.item-icon[data-astro-cid-ithsjftw] { object-fit: contain; width: 40px; height: 40px; }
+.item-title[data-astro-cid-ithsjftw] { min-width: 0px; color: var(--gold); flex: 1 1 0%; margin: 0px; font-size: 0.95rem; }
+.item-chevron[data-astro-cid-ithsjftw] { width: 16px; height: 16px; color: var(--ink-dim); transition: transform var(--dur) var(--ease); flex: 0 0 auto; }
+.item[data-astro-cid-ithsjftw][open] > .item-summary[data-astro-cid-ithsjftw] .item-chevron[data-astro-cid-ithsjftw] { transform: rotate(180deg); }
+.item-desc[data-astro-cid-ithsjftw] { color: var(--ink-dim); margin: 0px; padding: 0px 1rem 1rem calc(40px + 1.75rem); }
+.item-tooltip[data-astro-cid-ithsjftw] { isolation: isolate; border: 2px solid var(--purple); background: rgb(20, 10, 31); margin: 0px 1rem 1rem calc(40px + 1.75rem); padding: 0.65rem 0.85rem; position: relative; overflow: hidden; box-shadow: rgba(0, 0, 0, 0.6) 1px 1px inset; }
+.item-tooltip[data-astro-cid-ithsjftw] p[data-astro-cid-ithsjftw] { z-index: 1; color: var(--ink); max-width: none; margin: 0px; font-size: 0.9rem; line-height: 1.5; position: relative; }
+.item-motes[data-astro-cid-ithsjftw] { pointer-events: none; z-index: 0; width: 100%; height: 100%; position: absolute; inset: 0px; }
+@media (width >= 768px) {
+  .new-grid[data-astro-cid-ithsjftw] { gap: var(--gap); grid-template-columns: repeat(2, 1fr); }
+  .item-summary[data-astro-cid-ithsjftw] { text-align: center; cursor: default; flex-direction: column; align-items: center; gap: 0.75rem; min-height: 0px; padding: 1.5rem 1.25rem 0px; }
+  .item-slot[data-astro-cid-ithsjftw], .item-icon[data-astro-cid-ithsjftw] { width: 64px; height: 64px; }
+  .item-chevron[data-astro-cid-ithsjftw] { display: none; }
+  .item-title[data-astro-cid-ithsjftw] { font-size: 1.1rem; }
+  .item-desc[data-astro-cid-ithsjftw] { text-align: center; padding: 0px 1.25rem 1.5rem; }
+  .item-tooltip[data-astro-cid-ithsjftw] { text-align: left; margin: 0px 1.25rem 1.5rem; }
+}
+@media (width >= 1024px) {
+  .new-grid[data-astro-cid-ithsjftw] { grid-template-columns: repeat(3, 1fr); }
+}
+.biome-list[data-astro-cid-mrbez3sa] { scroll-snap-type: x mandatory; overscroll-behavior-x: contain; gap: 1rem; margin: 0px 0px 0.75rem; padding: 0px 0px 0.5rem; list-style: none; display: flex; overflow-x: auto; }
+.biome-card[data-astro-cid-mrbez3sa] { scroll-snap-align: start; flex: 0 0 85%; padding: 0px; overflow: visible; }
+.biome-link[data-astro-cid-mrbez3sa] { color: inherit; text-decoration: none; display: block; }
+.biome-link[data-astro-cid-mrbez3sa]:hover { text-decoration: none; }
+.biome-link[data-astro-cid-mrbez3sa]:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+.biome-go[data-astro-cid-mrbez3sa] { font-family: var(--font-display); letter-spacing: 0.06em; text-transform: uppercase; color: var(--cyan); margin-top: 0.5rem; font-size: 0.65rem; display: block; }
+.biome-frame[data-astro-cid-mrbez3sa] { aspect-ratio: 3 / 4; }
+.biome-frame[data-astro-cid-mrbez3sa] picture[data-astro-cid-mrbez3sa] { width: 100%; height: 100%; display: block; }
+.biome-frame[data-astro-cid-mrbez3sa] .biome-img { object-fit: cover; width: 100%; height: 100%; display: block; }
+.biome-scrim[data-astro-cid-mrbez3sa] { background: linear-gradient(to top, var(--outline) 0%, #0a08068c 42%, transparent 72%); pointer-events: none; position: absolute; inset: 0px; }
+.biome-caption[data-astro-cid-mrbez3sa] { z-index: 1; padding: 1rem 1.1rem 1.1rem; position: absolute; bottom: 0px; left: 0px; right: 0px; }
+.biome-eyebrow[data-astro-cid-mrbez3sa] { font-family: var(--font-display); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.4rem; font-size: 0.65rem; display: block; }
+.biome-name-row[data-astro-cid-mrbez3sa] { align-items: center; gap: 0.6rem; display: flex; }
+.biome-swatch[data-astro-cid-mrbez3sa] { border: 2px solid var(--outline); flex: 0 0 auto; }
+.biome-name-row[data-astro-cid-mrbez3sa] h3[data-astro-cid-mrbez3sa] { color: var(--gold); text-shadow: 2px 2px 0 var(--outline), -2px -2px 0 var(--outline), 2px -2px 0 var(--outline), -2px 2px 0 var(--outline); margin: 0px; font-size: clamp(1.3rem, 5vw, 1.75rem); }
+.biome-dots[data-astro-cid-mrbez3sa] { justify-content: center; gap: 0.15rem; display: flex; }
+.biome-dot[data-astro-cid-mrbez3sa] { cursor: pointer; background: 0px 0px; border: 0px; justify-content: center; align-items: center; width: 48px; height: 48px; padding: 0px; display: flex; position: relative; }
+.biome-dot[data-astro-cid-mrbez3sa]::before { content: ""; background: var(--stone-edge); width: 10px; height: 10px; box-shadow: 0 0 0 1px var(--outline); }
+.biome-dot[data-astro-cid-mrbez3sa][aria-current="true"]::before { background: var(--cyan); }
+@media (width >= 768px) {
+  .biome-list[data-astro-cid-mrbez3sa] { scroll-snap-type: none; flex-direction: column; gap: 20px; padding-bottom: 0px; overflow-x: visible; }
+  .biome-card[data-astro-cid-mrbez3sa] { flex: 0 0 auto; width: 100%; }
+  .biome-frame[data-astro-cid-mrbez3sa] { aspect-ratio: auto; height: clamp(220px, 24vw, 320px); }
+  .biome-dots[data-astro-cid-mrbez3sa] { display: none; }
+}
+.boss-grid[data-astro-cid-mff3muoj] { grid-template-columns: 1fr; gap: 1rem; display: grid; }
+.boss-panel[data-astro-cid-mff3muoj] { padding: 0px; position: relative; overflow: visible; }
+.boss-art[data-astro-cid-mff3muoj] { aspect-ratio: 1 / 1; background: var(--stone); overflow: hidden; }
+.boss-panel[data-astro-cid-mff3muoj] picture[data-astro-cid-mff3muoj] { width: 100%; height: 100%; display: block; }
+.boss-panel[data-astro-cid-mff3muoj] .boss-img { object-fit: cover; width: 100%; height: 100%; display: block; }
+.boss-scrim[data-astro-cid-mff3muoj] { background: linear-gradient(to top, var(--outline) 0%, #0a080699 40%, transparent 70%); pointer-events: none; position: absolute; inset: 0px; }
+.boss-name[data-astro-cid-mff3muoj] { z-index: 1; color: var(--gold); text-shadow: 2px 2px 0 var(--outline); margin: 0px; font-size: clamp(1.1rem, 3.4vw, 1.6rem); position: absolute; bottom: 1rem; left: 1rem; }
+.boss-more[data-astro-cid-mff3muoj] { grid-template-columns: 1fr; gap: 1rem; margin: 1rem 0px 0px; padding: 0px; list-style: none; display: grid; }
+.boss-more-card[data-astro-cid-mff3muoj] { padding: 1rem 1.15rem; }
+.boss-more-name[data-astro-cid-mff3muoj] { color: var(--gold); text-shadow: 2px 2px 0 var(--outline); text-transform: none; margin: 0px 0px 0.4rem; font-size: 0.95rem; }
+.boss-more-d[data-astro-cid-mff3muoj] { color: var(--ink-dim); max-width: none; margin: 0px; font-size: 0.9rem; line-height: 1.5; }
+@media (width >= 768px) {
+  .boss-more[data-astro-cid-mff3muoj] { grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+  .boss-grid[data-astro-cid-mff3muoj] { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+}
+.edition-grid[data-astro-cid-rp65disn] { grid-template-columns: 1fr; gap: 1.25rem; display: grid; }
+.edition-panel[data-astro-cid-rp65disn] { text-align: center; flex-direction: column; align-items: center; gap: 0.6rem; padding: 2rem 1.5rem; display: flex; }
+.edition-glint-mask[data-astro-cid-rp65disn] { pointer-events: none; z-index: 0; position: absolute; inset: 0px; overflow: hidden; }
+.edition-glint[data-astro-cid-rp65disn] { pointer-events: none; background: linear-gradient(75deg, rgba(0, 0, 0, 0), rgba(160, 116, 224, 0.18), rgba(0, 0, 0, 0)); width: 40%; height: 220%; animation: 6s ease-in-out 0s infinite normal none running edition-glint-sweep; position: absolute; top: -60%; left: -60%; transform: rotate(20deg); }
+@keyframes edition-glint-sweep { 
+  0% { left: -60%; }
+  45% { left: 130%; }
+  100% { left: 130%; }
+}
+.chest-icon[data-astro-cid-rp65disn] { z-index: 1; width: 48px; height: 48px; margin-bottom: 0.25rem; position: relative; }
+.edition-name[data-astro-cid-rp65disn] { z-index: 1; margin: 0px; font-size: 1.3rem; position: relative; }
+.bracket--gold[data-astro-cid-rp65disn] .edition-name[data-astro-cid-rp65disn] { color: var(--gold); }
+.edition-note[data-astro-cid-rp65disn] { z-index: 1; color: var(--ink-dim); font-family: var(--font-display); letter-spacing: 0.03em; text-transform: none; margin: 0px; position: relative; }
+.edition-cta[data-astro-cid-rp65disn] { flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 1.5rem; display: flex; }
+.preorder-toast[data-astro-cid-rp65disn] { max-width: 760px; box-shadow: var(--shadow-hard); background: rgb(33, 33, 33); border: 2px solid rgb(198, 198, 198); flex-direction: column; gap: 0.85rem; margin: 1.5rem auto 0px; padding: 1rem 1.25rem; display: flex; }
+.preorder-toast__title[data-astro-cid-rp65disn] h3[data-astro-cid-rp65disn] { color: var(--gold); margin: 0px; font-size: 1rem; }
+.preorder-closed[data-astro-cid-rp65disn] { color: var(--ink-dim); font-size: 0.8em; }
+.preorder-toast__items[data-astro-cid-rp65disn] { flex-direction: column; gap: 0.6rem; margin: 0px; padding: 0px; list-style: none; display: flex; }
+.preorder-toast__items[data-astro-cid-rp65disn] li[data-astro-cid-rp65disn] { color: var(--ink); font-family: var(--font-display); letter-spacing: 0.03em; align-items: center; gap: 0.65rem; font-size: 0.9rem; display: flex; }
+.preorder-toast__items[data-astro-cid-rp65disn] img[data-astro-cid-rp65disn] { flex: 0 0 auto; width: 32px; height: 32px; }
+@media (width >= 768px) {
+  .edition-grid[data-astro-cid-rp65disn] { grid-template-columns: 1fr 1fr; }
+  .preorder-toast[data-astro-cid-rp65disn] { flex-direction: row; justify-content: space-between; align-items: center; max-width: none; }
+  .preorder-toast__items[data-astro-cid-rp65disn] { flex-flow: wrap; justify-content: flex-end; gap: 0.75rem 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .edition-glint[data-astro-cid-rp65disn] { display: none; }
+}
+.latest-list[data-astro-cid-n3clyhiv] { gap: var(--gap); grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); margin: 0px 0px 1.5rem; padding: 0px; list-style: none; display: grid; }
+@media (width >= 900px) {
+  .latest-list[data-astro-cid-n3clyhiv] { grid-template-columns: repeat(3, 1fr); }
+}
+.builds-teaser[data-astro-cid-n3clyhiv] { color: var(--ink); flex-direction: column; gap: 0.35rem; min-height: 44px; margin: 0px 0px 1.5rem; padding: 1rem 1.25rem; text-decoration: none; display: flex; }
+.builds-teaser[data-astro-cid-n3clyhiv]:hover, .builds-teaser[data-astro-cid-n3clyhiv]:focus-visible { box-shadow: var(--bevel), 0 0 0 var(--px) var(--outline), var(--glow-cyan); text-decoration: none; }
+.bt-k[data-astro-cid-n3clyhiv] { font-family: var(--font-display); letter-spacing: 0.08em; text-transform: uppercase; color: var(--cyan); font-size: 0.65rem; }
+.bt-t[data-astro-cid-n3clyhiv] { font-family: var(--font-display); color: var(--gold); font-size: 1.05rem; }
+.bt-d[data-astro-cid-n3clyhiv] { font-family: var(--font-body); color: var(--ink-dim); max-width: 60ch; font-size: 0.92rem; }
+.latest-links[data-astro-cid-n3clyhiv] { flex-wrap: wrap; gap: 0.75rem 1.5rem; display: flex; }
+.latest-links[data-astro-cid-n3clyhiv] a[data-astro-cid-n3clyhiv] { font-family: var(--font-display); letter-spacing: 0.03em; color: var(--cyan); text-underline-offset: 3px; align-items: center; min-height: 44px; font-size: 0.8rem; text-decoration: underline; display: inline-flex; }
+.faq-wrap[data-astro-cid-tycplb2i] { max-width: 900px; }
+.faq-list[data-astro-cid-tycplb2i] { flex-direction: column; gap: 0.75rem; display: flex; }
+.faq-item[data-astro-cid-tycplb2i] { background: var(--stone); box-shadow: var(--bevel), 0 0 0 var(--px) var(--outline), var(--shadow-hard); }
+.faq-summary[data-astro-cid-tycplb2i] { cursor: pointer; justify-content: space-between; align-items: center; gap: 1rem; min-height: 56px; padding: 0.85rem 1.25rem; list-style: none; display: flex; }
+.faq-summary[data-astro-cid-tycplb2i]::marker { content: ""; }
+.faq-summary[data-astro-cid-tycplb2i]::-webkit-details-marker { display: none; }
+.faq-summary[data-astro-cid-tycplb2i] h3[data-astro-cid-tycplb2i] { color: var(--ink); letter-spacing: 0.02em; text-transform: none; margin: 0px; font-size: 0.9rem; line-height: 1.5; }
+.faq-indicator[data-astro-cid-tycplb2i] { flex: 0 0 auto; width: 20px; height: 20px; position: relative; }
+.faq-indicator[data-astro-cid-tycplb2i]::before, .faq-indicator[data-astro-cid-tycplb2i]::after { content: ""; background: var(--purple); position: absolute; }
+.faq-indicator[data-astro-cid-tycplb2i]::before { width: 16px; height: 2px; top: 9px; left: 2px; }
+.faq-indicator[data-astro-cid-tycplb2i]::after { width: 2px; height: 16px; transition: transform var(--dur-fast) var(--ease); top: 2px; left: 9px; }
+.faq-item[data-astro-cid-tycplb2i][open] .faq-indicator[data-astro-cid-tycplb2i]::after { transform: scaleY(0); }
+.faq-answer[data-astro-cid-tycplb2i] { padding: 0px 1.25rem 1.25rem; }
+.faq-src[data-astro-cid-tycplb2i] { font-family: var(--font-display); letter-spacing: 0.03em; color: var(--ink-dim); margin: 1.25rem 0px 0px; font-size: 0.875rem; }
+.faq-src[data-astro-cid-tycplb2i] a[data-astro-cid-tycplb2i] { text-underline-offset: 3px; text-decoration: underline; }
+.faq-answer[data-astro-cid-tycplb2i] p[data-astro-cid-tycplb2i] { max-width: none; font-family: var(--font-body); margin: 0px; padding: 0.85rem 1rem; }
+section[data-astro-cid-tycplb2i]#faq { interpolate-size: allow-keywords; }
+#faq details::details-content { transition: height var(--dur-slow) var(--ease), content-visibility var(--dur-slow) allow-discrete; height: 0px; overflow: clip; }
+#faq details[open]::details-content { height: auto; }
+.wrap[data-astro-cid-5lfxply5] { position: relative; }
+.tools-soul[data-astro-cid-5lfxply5] { pointer-events: none; z-index: 0; width: 100%; height: 100%; position: absolute; inset: 0px; }
+.tools-grid[data-astro-cid-5lfxply5] { z-index: 1; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 0px; padding: 0px; list-style: none; display: grid; position: relative; }
+.tools-panel-wrap[data-astro-cid-5lfxply5] { list-style: none; }
+.tools-panel[data-astro-cid-5lfxply5] { text-align: center; color: var(--ink); flex-direction: column; align-items: center; gap: 0.6rem; width: 100%; height: 100%; min-height: 44px; padding: 1.75rem 1rem 1.5rem; text-decoration: none; display: flex; }
+.tools-panel[data-astro-cid-5lfxply5]:hover, .tools-panel[data-astro-cid-5lfxply5]:focus-visible { text-decoration: none; }
+.tools-panel[data-astro-cid-5lfxply5]:hover .tools-name[data-astro-cid-5lfxply5], .tools-panel[data-astro-cid-5lfxply5]:focus-visible .tools-name[data-astro-cid-5lfxply5] { color: var(--cyan); }
+.tools-icon[data-astro-cid-5lfxply5] { width: 48px; height: 48px; }
+.tools-name[data-astro-cid-5lfxply5] { font-family: var(--font-display); color: var(--ink); letter-spacing: 0.02em; font-size: 0.85rem; }
+.tools-more[data-astro-cid-5lfxply5] { z-index: 1; text-align: center; font-family: var(--font-display); letter-spacing: 0.03em; margin: 1.5rem 0px 0px; font-size: 0.85rem; position: relative; }
+.tools-more[data-astro-cid-5lfxply5] a[data-astro-cid-5lfxply5] { text-underline-offset: 3px; padding-block: 0.6rem; text-decoration: underline; display: inline-block; }
+@media (width >= 768px) {
+  .tools-grid[data-astro-cid-5lfxply5] { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+}
+.article-card-wrap[data-astro-cid-xq7g72fn] { list-style: none; }
+.article-card-link[data-astro-cid-xq7g72fn] { color: var(--ink); flex-direction: column; height: 100%; text-decoration: none; display: flex; }
+.article-card-link[data-astro-cid-xq7g72fn]:hover, .article-card-link[data-astro-cid-xq7g72fn]:focus-visible { text-decoration: none; }
+.article-card-link[data-astro-cid-xq7g72fn]:hover h3[data-astro-cid-xq7g72fn], .article-card-link[data-astro-cid-xq7g72fn]:focus-visible h3[data-astro-cid-xq7g72fn] { color: var(--cyan); }
+.card-art[data-astro-cid-xq7g72fn] { aspect-ratio: 16 / 9; width: 100%; }
+.article-card-link[data-astro-cid-xq7g72fn] picture { width: 100%; height: 100%; display: block; }
+.article-card-link[data-astro-cid-xq7g72fn] .article-card-img { object-fit: cover; width: 100%; height: 100%; display: block; }
+.article-card-body[data-astro-cid-xq7g72fn] { min-width: 0px; padding: 1rem 1.1rem 1.1rem; }
+.article-card-body[data-astro-cid-xq7g72fn] h3[data-astro-cid-xq7g72fn] { color: var(--ink); text-transform: none; margin: 0px 0px 0.5rem; font-size: 0.95rem; }
+.article-card-summary[data-astro-cid-xq7g72fn] { color: var(--ink-dim); font-family: var(--font-display); letter-spacing: 0.03em; margin: 0px 0px 0.75rem; font-size: 0.9rem; line-height: 1.5; }
+.article-card-rail[data-astro-cid-xq7g72fn] { flex-wrap: wrap; align-items: center; gap: 0.6rem; margin: 0px; display: flex; }
+.article-card-checked[data-astro-cid-xq7g72fn] { font-family: var(--font-display); letter-spacing: 0.03em; color: var(--gold); font-size: 0.68rem; }
+@media (width >= 768px) {
+  .article-card-link--featured[data-astro-cid-xq7g72fn] { flex-direction: row; align-items: stretch; }
+  .article-card-link--featured[data-astro-cid-xq7g72fn] .card-art[data-astro-cid-xq7g72fn] { aspect-ratio: auto; flex: 0 0 auto; width: 55%; }
+  .article-card-link--featured[data-astro-cid-xq7g72fn] .article-card-body[data-astro-cid-xq7g72fn] { flex-direction: column; justify-content: center; padding: 1.5rem 1.75rem; display: flex; }
+  .article-card-link--featured[data-astro-cid-xq7g72fn] .article-card-body[data-astro-cid-xq7g72fn] h3[data-astro-cid-xq7g72fn] { font-size: 1.3rem; }
+}
+.hotbar[data-astro-cid-yxzsfcec] { inset-inline: 0px; z-index: 60; transition: transform var(--dur) var(--ease); flex-direction: column; align-items: center; display: flex; position: fixed; bottom: 0px; }
+.hotbar[data-astro-cid-yxzsfcec].is-hidden { transform: translateY(calc(100% + 16px)); }
+.section-tag[data-astro-cid-yxzsfcec] { pointer-events: none; background: var(--stone-2); color: var(--ink); font-family: var(--font-display); letter-spacing: 0.05em; box-shadow: var(--bevel), 0 0 0 var(--px) var(--outline); margin-bottom: 0.4rem; padding: 0.3rem 0.7rem; font-size: 0.65rem; }
+.slots[data-astro-cid-yxzsfcec] { width: 100%; height: var(--hotbar-h); border-top: 2px solid var(--outline); padding-bottom: env(safe-area-inset-bottom,0px); background: rgba(20, 17, 13, 0.92); display: flex; }
+.slot[data-astro-cid-yxzsfcec] { min-width: 48px; min-height: 48px; color: var(--ink-dim); border-right: 1px solid var(--outline); transition: box-shadow var(--dur) var(--ease), color var(--dur) var(--ease), transform var(--dur-fast) var(--ease); flex-direction: column; flex: 1 1 0px; justify-content: center; align-items: center; gap: 0.25rem; text-decoration: none; display: flex; box-shadow: rgba(0, 0, 0, 0) 0px 0px inset; }
+.slot[data-astro-cid-yxzsfcec]:last-child { border-right: 0px; }
+.slot[data-astro-cid-yxzsfcec]:hover { color: var(--ink); text-decoration: none; }
+.slot[data-astro-cid-yxzsfcec]:active { transform: translateY(2px); }
+.slot[data-astro-cid-yxzsfcec] .lbl[data-astro-cid-yxzsfcec] { font-family: var(--font-display); letter-spacing: 0.02em; text-transform: uppercase; font-size: 10px; }
+.slot[data-astro-cid-yxzsfcec].is-active { color: var(--ink); box-shadow: inset 0 0 0 3px var(--cyan), var(--glow-cyan); }
+@media (width >= 768px) {
+  .hotbar[data-astro-cid-yxzsfcec] { padding-bottom: 16px; }
+  .slots[data-astro-cid-yxzsfcec] { border: 2px solid var(--outline); width: auto; box-shadow: var(--shadow-hard); padding-bottom: 0px; }
+  .slot[data-astro-cid-yxzsfcec] { flex: 0 0 auto; width: 64px; }
+}
+
+.wrap[data-astro-cid-5lfxply5]{position:relative}.tools-soul[data-astro-cid-5lfxply5]{pointer-events:none;z-index:0;width:100%;height:100%;position:absolute;inset:0}.tools-grid[data-astro-cid-5lfxply5]{z-index:1;grid-template-columns:repeat(2,1fr);gap:1rem;margin:0;padding:0;list-style:none;display:grid;position:relative}.tools-panel-wrap[data-astro-cid-5lfxply5]{list-style:none}.tools-panel[data-astro-cid-5lfxply5]{text-align:center;color:var(--ink);flex-direction:column;align-items:center;gap:.6rem;width:100%;height:100%;min-height:44px;padding:1.75rem 1rem 1.5rem;text-decoration:none;display:flex}.tools-panel[data-astro-cid-5lfxply5]:hover,.tools-panel[data-astro-cid-5lfxply5]:focus-visible{text-decoration:none}.tools-panel[data-astro-cid-5lfxply5]:hover .tools-name[data-astro-cid-5lfxply5],.tools-panel[data-astro-cid-5lfxply5]:focus-visible .tools-name[data-astro-cid-5lfxply5]{color:var(--cyan)}.tools-icon[data-astro-cid-5lfxply5]{width:48px;height:48px}.tools-name[data-astro-cid-5lfxply5]{font-family:var(--font-display);color:var(--ink);letter-spacing:.02em;font-size:.85rem}.tools-more[data-astro-cid-5lfxply5]{z-index:1;text-align:center;font-family:var(--font-display);letter-spacing:.03em;margin:1.5rem 0 0;font-size:.85rem;position:relative}.tools-more[data-astro-cid-5lfxply5] a[data-astro-cid-5lfxply5]{text-underline-offset:3px;padding-block:.6rem;text-decoration:underline;display:inline-block}@media (width>=768px){.tools-grid[data-astro-cid-5lfxply5]{grid-template-columns:repeat(4,1fr);gap:1.25rem}}
+.article-card-wrap[data-astro-cid-xq7g72fn]{list-style:none}.article-card-link[data-astro-cid-xq7g72fn]{color:var(--ink);flex-direction:column;height:100%;text-decoration:none;display:flex}.article-card-link[data-astro-cid-xq7g72fn]:hover,.article-card-link[data-astro-cid-xq7g72fn]:focus-visible{text-decoration:none}.article-card-link[data-astro-cid-xq7g72fn]:hover h3[data-astro-cid-xq7g72fn],.article-card-link[data-astro-cid-xq7g72fn]:focus-visible h3[data-astro-cid-xq7g72fn]{color:var(--cyan)}.card-art[data-astro-cid-xq7g72fn]{aspect-ratio:16/9;width:100%}.article-card-link[data-astro-cid-xq7g72fn] picture{width:100%;height:100%;display:block}.article-card-link[data-astro-cid-xq7g72fn] .article-card-img{object-fit:cover;width:100%;height:100%;display:block}.article-card-body[data-astro-cid-xq7g72fn]{min-width:0;padding:1rem 1.1rem 1.1rem}.article-card-body[data-astro-cid-xq7g72fn] h3[data-astro-cid-xq7g72fn]{color:var(--ink);text-transform:none;margin:0 0 .5rem;font-size:.95rem}.article-card-summary[data-astro-cid-xq7g72fn]{color:var(--ink-dim);font-family:var(--font-display);letter-spacing:.03em;margin:0 0 .75rem;font-size:.9rem;line-height:1.5}.article-card-rail[data-astro-cid-xq7g72fn]{flex-wrap:wrap;align-items:center;gap:.6rem;margin:0;display:flex}.article-card-checked[data-astro-cid-xq7g72fn]{font-family:var(--font-display);letter-spacing:.03em;color:var(--gold);font-size:.68rem}@media (width>=768px){.article-card-link--featured[data-astro-cid-xq7g72fn]{flex-direction:row;align-items:stretch}.article-card-link--featured[data-astro-cid-xq7g72fn] .card-art[data-astro-cid-xq7g72fn]{aspect-ratio:auto;flex:none;width:55%}.article-card-link--featured[data-astro-cid-xq7g72fn] .article-card-body[data-astro-cid-xq7g72fn]{flex-direction:column;justify-content:center;padding:1.5rem 1.75rem;display:flex}.article-card-link--featured[data-astro-cid-xq7g72fn] .article-card-body[data-astro-cid-xq7g72fn] h3[data-astro-cid-xq7g72fn]{font-size:1.3rem}}
+.hotbar[data-astro-cid-yxzsfcec]{inset-inline:0;z-index:60;transition:transform var(--dur) var(--ease);flex-direction:column;align-items:center;display:flex;position:fixed;bottom:0}.hotbar[data-astro-cid-yxzsfcec].is-hidden{transform:translateY(calc(100% + 16px))}.section-tag[data-astro-cid-yxzsfcec]{pointer-events:none;background:var(--stone-2);color:var(--ink);font-family:var(--font-display);letter-spacing:.05em;box-shadow:var(--bevel), 0 0 0 var(--px) var(--outline);margin-bottom:.4rem;padding:.3rem .7rem;font-size:.65rem}.slots[data-astro-cid-yxzsfcec]{width:100%;height:var(--hotbar-h);border-top:2px solid var(--outline);padding-bottom:env(safe-area-inset-bottom,0px);background:#14110deb;display:flex}.slot[data-astro-cid-yxzsfcec]{min-width:48px;min-height:48px;color:var(--ink-dim);border-right:1px solid var(--outline);transition:box-shadow var(--dur) var(--ease), color var(--dur) var(--ease), transform var(--dur-fast) var(--ease);flex-direction:column;flex:1 1 0;justify-content:center;align-items:center;gap:.25rem;text-decoration:none;display:flex;box-shadow:inset 0 0 #0000}.slot[data-astro-cid-yxzsfcec]:last-child{border-right:0}.slot[data-astro-cid-yxzsfcec]:hover{color:var(--ink);text-decoration:none}.slot[data-astro-cid-yxzsfcec]:active{transform:translateY(2px)}.slot[data-astro-cid-yxzsfcec] .lbl[data-astro-cid-yxzsfcec]{font-family:var(--font-display);letter-spacing:.02em;text-transform:uppercase;font-size:10px}.slot[data-astro-cid-yxzsfcec].is-active{color:var(--ink);box-shadow:inset 0 0 0 3px var(--cyan), var(--glow-cyan)}@media (width>=768px){.hotbar[data-astro-cid-yxzsfcec]{padding-bottom:16px}.slots[data-astro-cid-yxzsfcec]{border:2px solid var(--outline);width:auto;box-shadow:var(--shadow-hard);padding-bottom:0}.slot[data-astro-cid-yxzsfcec]{flex:none;width:64px}}
